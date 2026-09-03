@@ -1,0 +1,149 @@
+/* ── Base — Authentic Educator Notebook & Whiteboard Layout ── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-root);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ── Ambient warm glow ── */
+.glow-bg {
+  position: fixed; inset: 0; z-index: -2;
+  background: var(--gradient-glow);
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+/* ── Authentic paper noise texture overlay ── */
+.noise-overlay {
+  position: fixed; inset: 0; z-index: -1;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+/* ── Notebook Graph-Paper Grid (Crisp Educator Quad Paper) ── */
+.grid-bg {
+  position: fixed; inset: 0; z-index: -3;
+  background-image:
+    linear-gradient(rgba(45, 106, 79, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 106, 79, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+h2 { font-size: clamp(34px, 5vw, 50px); font-weight: 800; }
+h3 { font-size: clamp(19px, 2.5vw, 24px); font-weight: 700; }
+
+p { color: var(--text-secondary); line-height: 1.7; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover { color: var(--accent-light); }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: var(--bg-elevated);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-default);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── Layout ── */
+.container { max-width: 1360px; margin: 0 auto; padding: 0 32px; }
+.container-wide { max-width: 1440px; }
+
+section {
+  padding: 88px 0;
+  position: relative;
+}
+
+/* ── Section Headers ── */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent-glow);
+  padding: 5px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--accent-border);
+  box-shadow: 0 1px 3px rgba(21, 67, 46, 0.06);
+}
+
+.section-title { margin-bottom: 14px; color: var(--text-primary); }
+
+.text-gradient {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-desc {
+  font-size: 18px;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-weight: 450;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* ── Divider ── */
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-default), transparent);
+  margin: 0;
+}
+
+/* ── Selection ── */
+::selection {
+  background: #B7E4C7;
+  color: #0F3323;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }

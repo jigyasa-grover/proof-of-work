@@ -1,0 +1,74 @@
+/* ── Design Tokens — Warm Whiteboard & High-Contrast Dark Green Notebook ── */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&family=Caveat:wght@600;700&display=swap');
+
+:root {
+  /* ── Typography ── */
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'SF Mono', monospace;
+  --font-hand:    'Caveat', cursive, sans-serif;
+
+  /* ── Palette: Warm Ivory Notebook & Whiteboard ── */
+  --bg-root:       #FAF8F4;
+  --bg-surface:    #FFFFFF;
+  --bg-card:       #FFFFFF;
+  --bg-elevated:   #F3EFE6;
+  --bg-hover:      #EAE4D8;
+
+  --border-subtle:  #E8E2D6;
+  --border-default: #D6CEBF;
+  --border-strong:  #B8AEA0;
+
+  /* ── High Contrast Text System (Crystal Clear Legibility) ── */
+  --text-primary:   #0E1712;  /* Deep rich ink */
+  --text-secondary: #24352B;  /* Solid legible body copy */
+  --text-muted:     #4D6154;  /* High contrast secondary/labels */
+
+  /* ── Accent System: Deep Forest Pine & Sage ── */
+  --accent:         #15432E;  /* Deep Forest Green */
+  --accent-light:   #235C40;
+  --accent-glow:    #E6F4EC;
+  --accent-border:  #9DCDB5;
+
+  --green:          #15432E;
+  --green-muted:    #E4F5EB;
+  --green-border:   #86CFA8;
+
+  --red:            #B91C1C;
+  --red-muted:      #FEE2E2;
+  --red-border:     #FCA5A5;
+
+  --amber:          #92400E;
+  --amber-muted:    #FEF3C7;
+  --amber-border:   #FCD34D;
+
+  --cyan:           #0E7490;
+  --cyan-muted:     #E0F2FE;
+  --cyan-border:    #7DD3FC;
+
+  --pink:           #9D174D;
+  --pink-muted:     #FCE7F3;
+  --pink-border:    #F472B6;
+
+  /* ── Gradients ── */
+  --gradient-accent: linear-gradient(135deg, #0F3323 0%, #1E513A 60%, #2D6A4F 100%);
+  --gradient-glow:   radial-gradient(900px circle at var(--mx, 50%) var(--my, 50%), rgba(45, 106, 79, 0.05), transparent 70%);
+  --gradient-card:   linear-gradient(180deg, #FFFFFF 0%, #FAF8F4 100%);
+
+  /* ── Shadows ── */
+  --shadow-sm:   0 1px 3px rgba(15,25,18,0.05), 0 1px 2px rgba(15,25,18,0.06);
+  --shadow-md:   0 4px 16px -2px rgba(15,25,18,0.08), 0 2px 6px -1px rgba(15,25,18,0.05);
+  --shadow-lg:   0 12px 32px -4px rgba(15,25,18,0.11), 0 4px 12px -2px rgba(15,25,18,0.06);
+  --shadow-glow: 0 10px 30px rgba(30,81,58,0.14);
+
+  /* ── Spacing & Radius ── */
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+  --radius-xl:  24px;
+
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}

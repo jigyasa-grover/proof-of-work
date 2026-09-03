@@ -1,0 +1,107 @@
+/* ── Modern Scroll Transitions & Animation Physics ── */
+
+/* ── Top Reading Progress Bar ── */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  background: var(--gradient-accent);
+  z-index: 1100;
+  transition: width 0.1s linear;
+  box-shadow: 0 1px 6px rgba(21, 67, 46, 0.25);
+}
+
+/* ── Modern Reveal Transitions ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  filter: blur(4px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0px);
+}
+
+/* Directional entry from Left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px) rotate(-1deg);
+  filter: blur(3px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0) rotate(0deg);
+  filter: blur(0px);
+}
+
+/* Directional entry from Right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px) rotate(1deg);
+  filter: blur(3px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0) rotate(0deg);
+  filter: blur(0px);
+}
+
+/* Scale & Lift entry */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.94) translateY(20px);
+  filter: blur(4px);
+  transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  filter: blur(0px);
+}
+
+/* ── Stagger Delays ── */
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+.reveal-delay-6 { transition-delay: 0.48s; }
+
+/* ── Floating & Micro-Animations ── */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(0.5deg); }
+}
+
+.float-animation {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(21, 67, 46, 0.35); }
+  70% { box-shadow: 0 0 0 9px rgba(21, 67, 46, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(21, 67, 46, 0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
